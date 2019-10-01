@@ -1,8 +1,10 @@
 import React from 'react';
+import TranslateComponent from "./TranslateComponent";
 
 function App() {
   return (
-    <div className="App">
+    <div>
+      <TranslateComponent/>
     </div>
   );
 }

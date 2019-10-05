@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 
 const translate = (text, setTranslated) => async () => {
-  let translations = await translateText(text);
+  const translations = await translateText(text);
   setTranslated(translations);
 };
 
@@ -24,7 +24,8 @@ const TranslateComponent = () => {
           <Button color='green' onClick={translate(text, setTranslated)}>Translate</Button>
         </Card.Content>
       </Card>
-      {translated && translated.map(i => <Segment style={{direction:'rtl'}} key={i.translatedText}>{i.translatedText}</Segment>)}
+      {translated && translated.map(i => <Segment style={{direction: 'rtl'}}
+                                                  key={i.translatedText}>{i.translatedText}</Segment>)}
     </Center>
 
   );

@@ -1,21 +1,20 @@
 import React from 'react';
 import TranslateComponent from "./TranslateComponent";
-import styled from 'styled-components';
-import img from './photos/background.jpg';
+import ResponsiveContainer from "./container/ResponsiveContainer";
+import {BrowserRouter, Route, Switch} from "react-router-dom";
 
 function App() {
   return (
-    <AppRoot>
-      <TranslateComponent/>
-    </AppRoot>
+    <BrowserRouter>
+      <ResponsiveContainer>
+        <Switch>
+          <Route path='/' component={TranslateComponent}/>
+        </Switch>
+      </ResponsiveContainer>
+    </BrowserRouter>
   );
 }
 
 export default App;
 
-const AppRoot = styled.div`
-    background-image: url(${img});
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-`;
+
